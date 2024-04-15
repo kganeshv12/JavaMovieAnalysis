@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Review Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Header */
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 36px;
+        }
+        /* Main Content */
+        main {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #007bff;
+        }
+        /* Forms */
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center; /* Center align table values */
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        /* Messages */
+        .success-message {
+            color: green;
+            margin-bottom: 10px;
+        }
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Movies Review Website</h1>
+    </header>
+    <div class="container">
+        <main>
+            <section>
+                <h2>Add Ratings</h2>
+                <form action="/updateRating" method="post">
+                    <label for="movieId">Movie ID:</label>
+                    <input type="number" id="movieId" name="movieId" required>
+                    <label for="newRating">New Rating:</label>
+                    <input type="number" id="newRating" name="newRating" step="0.1" min="1" max="5" required>
+                    <button type="submit">Update Rating</button>
+                </form>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2>Movies List</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Release Year</th>
+                            <th>Genre</th>
+                            <th>Director</th>
+                            <th>Current Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="movie : ${movies}">
+                            <td th:text="${movie.id}"></td>
+                            <td th:text="${movie.title}"></td>
+                            <td th:text="${movie.releaseYear}"></td>
+                            <td th:text="${movie.genre}"></td>
+                            <td th:text="${movie.director}"></td>
+                            <td th:text="${movie.averageRating}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2>Add Movies</h2>
+                <form action="/addMovie" method="post">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                    <label for="releaseYear">Release Year:</label>
+                    <input type="number" id="releaseYear" name="releaseYear" required>
+                    <label for="genre">Genre:</label>
+                    <input type="text" id="genre" name="genre" required>
+                    <label for="director">Director:</label>
+                    <input type="text" id="director" name="director" required>
+                    <label for="averageRating">Average Rating:</label>
+                    <input type="number" id="averageRating" name="averageRating" step="0.1" min="1" max="5" required>
+                    <button type="submit">Add Movie</button>
+                </form>
+            </section>
+        </main>
+        <div class="success-message" th:if="${successMessage}" th:text="${successMessage}"></div>
+        <div class="error-message" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+    </div>
+</body>
+</html>
