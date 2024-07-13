@@ -49,9 +49,9 @@ This project is a Movie Analysis Platform that follows the Model, View, and Cont
 ![Images](img3.png)
 
 ## DATABASE VIEW
-![Images](img4.png)
-
-## ERROR CONDITIONS :
 ![Images](img5.png)
 
 ![Images](img6.png)
+
+## ERROR CONDITIONS :
+![Images](img4.png)
