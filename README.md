@@ -21,8 +21,8 @@ This project is a Movie Analysis Platform that follows the Model, View, and Cont
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/movie-analysis-platform.git
-   cd movie-analysis-platform
+   git clone https://github.com/kganeshv12/JavaMovieAnalysis.git
+   cd JavaMovieAnalysis
    ```
 2. **Configure the database:**
 
@@ -40,12 +40,18 @@ This project is a Movie Analysis Platform that follows the Model, View, and Cont
     The application will start running on http://localhost:8080.
 
 ## ADDING A MOVIE :
+![Images]("img1.png")
 
 ## ADDING A RATING
+![Images]("img2.png")
 
 ## UPDATED AVERAGE RATING
+![Images]("img3.png")
 
 ## DATABASE VIEW
+![Images]("img4.png")
 
 ## ERROR CONDITIONS :
+![Images]("img5.png")
 
+![Images]("img6.png")
