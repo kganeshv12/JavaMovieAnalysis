@@ -40,18 +40,18 @@ This project is a Movie Analysis Platform that follows the Model, View, and Cont
     The application will start running on http://localhost:8080.
 
 ## ADDING A MOVIE :
-![Images]("img1.png")
+![Images](img1.png)
 
 ## ADDING A RATING
-![Images]("img2.png")
+![Images](img2.png)
 
 ## UPDATED AVERAGE RATING
-![Images]("img3.png")
+![Images](img3.png)
 
 ## DATABASE VIEW
-![Images]("img4.png")
+![Images](img4.png)
 
 ## ERROR CONDITIONS :
-![Images]("img5.png")
+![Images](img5.png)
 
-![Images]("img6.png")
+![Images](img6.png)
